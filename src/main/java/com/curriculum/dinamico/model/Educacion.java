@@ -26,7 +26,5 @@ public class Educacion {
     
     @ManyToOne
     private Persona persona;
-    
-
-    
+       
 }
