@@ -34,4 +34,7 @@ public class Persona {
     
     @OneToMany (mappedBy = "persona")
     private List<Proyecto> proyecto;
+    
+    @OneToMany (mappedBy = "persona")
+    private List<Exp_laboral> experiencia_laboral;
 }
