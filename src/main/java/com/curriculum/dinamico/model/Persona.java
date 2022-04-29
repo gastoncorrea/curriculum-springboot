@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -27,7 +28,7 @@ public class Persona {
     private String apellido;
     //aca tengo una duda el tipo de dato es usuario o el tipo de dato que ya tiene el id en usuario?
     @OneToOne
-    private Usuario id_usuario;
+    private Usuario idusuario;
     
     @OneToMany(mappedBy = "persona")
     private List<Educacion> educacion;
