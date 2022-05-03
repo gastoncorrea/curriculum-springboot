@@ -1,6 +1,7 @@
 
 package com.curriculum.dinamico.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Calendar;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,6 +26,7 @@ public class Educacion {
     private String titulo;
     
     @ManyToOne
+    @JsonIgnore
     private Persona persona;
        
 }

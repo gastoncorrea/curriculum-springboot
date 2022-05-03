@@ -1,14 +1,37 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.curriculum.dinamico.service;
 
-/**
- *
- * @author gasto
- */
-public class EducacionService {
+import com.curriculum.dinamico.model.Educacion;
+import com.curriculum.dinamico.repository.EducacionRepository;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class EducacionService implements IEducacionService{
     
+    @Autowired
+    private EducacionRepository educacionR;
+
+    @Override
+    public void crearNuevaeducacion(Educacion educacion) {
+        educacionR.save(educacion);
+    }
+
+    @Override
+    public List<Educacion> obtenerEducacion() {
+        List<Educacion> listaEducacion = educacionR.findAll();
+        return listaEducacion;
+    }
+
+    @Override
+    public Educacion obtenerUnaEducacion(Long id) {
+        Educacion unaEducacion = educacionR.getById(id);
+        return unaEducacion;
+    }
+
+    @Override
+    public void eliminarUnaEducacion(Long id) {
+        educacionR.deleteById(id);
+    }
 }

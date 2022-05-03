@@ -1,14 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.curriculum.dinamico.service;
 
-/**
- *
- * @author gasto
- */
+import com.curriculum.dinamico.model.Educacion;
+import java.util.List;
+
+
 public interface IEducacionService {
     
+    public void crearNuevaeducacion(Educacion educacion);
+    
+    public List<Educacion> obtenerEducacion();
+    
+    public Educacion obtenerUnaEducacion(Long id);
+    
+    public void eliminarUnaEducacion(Long id);
 }
