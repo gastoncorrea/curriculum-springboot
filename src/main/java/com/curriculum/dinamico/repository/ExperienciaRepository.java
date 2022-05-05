@@ -1,14 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.curriculum.dinamico.repository;
 
-/**
- *
- * @author gasto
- */
-public interface ExperienciaRepository {
+import com.curriculum.dinamico.model.Exp_laboral;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ExperienciaRepository extends JpaRepository<Exp_laboral, Long>{
     
 }
