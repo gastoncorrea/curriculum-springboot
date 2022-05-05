@@ -3,6 +3,7 @@ package com.curriculum.dinamico.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Calendar;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,8 +24,8 @@ public class Exp_laboral {
     private String nombre;
     private String puesto;
     private String logo;
-    private Calendar fecha_inicio;
-    private Calendar fecha_fin;
+    private Date fecha_inicio;
+    private Date fecha_fin;
     private String tiempo_trab;
     
     @ManyToOne

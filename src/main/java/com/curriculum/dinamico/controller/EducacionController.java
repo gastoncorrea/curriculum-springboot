@@ -3,7 +3,6 @@ package com.curriculum.dinamico.controller;
 
 import com.curriculum.dinamico.model.Educacion;
 import com.curriculum.dinamico.service.IEducacionService;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,8 +35,8 @@ public class EducacionController {
     @PutMapping("/educacion/modificar/{id}")
     public Educacion modificarUnaEducacion(@PathVariable Long id,
                                             @RequestParam ("nombre_institucion") String nuevoNombre,
-                                            @RequestParam ("fecha_inicio") Calendar nuevaFechaInicio,
-                                            @RequestParam ("fecha_fin") Calendar nuevaFechaFin,
+                                            @RequestParam ("fecha_inicio") Date nuevaFechaInicio,
+                                            @RequestParam ("fecha_fin") Date nuevaFechaFin,
                                             @RequestParam ("titulo") String nuevoTitulo){
         
         Educacion modificarEducacion = educacionS.obtenerUnaEducacion(id);
