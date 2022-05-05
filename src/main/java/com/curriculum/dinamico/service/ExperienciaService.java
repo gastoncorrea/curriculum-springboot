@@ -5,8 +5,9 @@ import com.curriculum.dinamico.model.Exp_laboral;
 import com.curriculum.dinamico.repository.ExperienciaRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-
+@Service
 public class ExperienciaService implements IExperienciaService {
     @Autowired
     private ExperienciaRepository expRepository;
