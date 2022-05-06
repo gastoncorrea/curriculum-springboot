@@ -26,7 +26,7 @@ public class Educacion {
     private String titulo;
     
     @ManyToOne
-    //@JsonIgnore
+    @JsonIgnore
     private Persona persona;
        
 }
