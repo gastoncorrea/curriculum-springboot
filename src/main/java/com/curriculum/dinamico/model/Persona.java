@@ -31,7 +31,7 @@ public class Persona {
     @OneToOne
     private Usuario idusuario;
     
-    @OneToOne
+    @OneToOne(mappedBy = "persona")
     private Residencia idresidencia;
     
     @OneToMany(mappedBy = "persona")

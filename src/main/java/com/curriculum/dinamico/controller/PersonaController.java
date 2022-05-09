@@ -27,6 +27,7 @@ public class PersonaController {
     }
 
     @GetMapping("/persona/traer")
+    @ResponseBody
     public List<Persona> traerPersonas() {
         List<Persona> listaPersonas = personaService.traerTodasLasPersonas();
         return listaPersonas;
