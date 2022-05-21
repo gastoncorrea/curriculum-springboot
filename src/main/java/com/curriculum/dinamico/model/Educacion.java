@@ -21,6 +21,7 @@ public class Educacion {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long ideducacion;
     private String nombre_institucion;
+    //agregar atributo logo
     private Date fecha_inicio;
     private Date fecha_fin;
     private String titulo;
