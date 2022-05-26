@@ -56,7 +56,7 @@ public class ExperienciaController {
     }
     
     @DeleteMapping ("/experiencia/borrar/{id}")
-    public String borrarExperiencia(Long id){
+    public String borrarExperiencia(@PathVariable Long id){
         expService.eliminarUnaExperiencia(id);
         return "La Experiencia laboral fue eliminada";
     }
