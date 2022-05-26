@@ -1,4 +1,5 @@
 
+
 package com.curriculum.dinamico.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;

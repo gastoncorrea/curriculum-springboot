@@ -27,6 +27,8 @@ public class Persona {
     private String url_linkedin;
     private String nombre;
     private String apellido;
+    //agregar atributo numero de celular
+    
     //aca tengo una duda el tipo de dato es usuario o el tipo de dato que ya tiene el id en usuario?
     @OneToOne
     private Usuario idusuario;
