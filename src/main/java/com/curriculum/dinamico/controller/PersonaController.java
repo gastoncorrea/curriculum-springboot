@@ -43,7 +43,8 @@ public class PersonaController {
     @ResponseBody
     public Persona modificarPersona(@PathVariable Long id, @RequestParam("imagen_perfil") String nuevoPerfil,
             @RequestParam("descripcion_mi") String nuevaDescripcion, @RequestParam("url_linkedin") String nuevoLinkedin,
-            @RequestParam("nombre") String nuevoNombre, @RequestParam("apellido") String nuevoApellido) {
+            @RequestParam("nombre") String nuevoNombre, @RequestParam("apellido") String nuevoApellido,
+            @RequestParam ("num_celular") int nuevoNumero) {
                 
         Persona findPersona = personaService.encontrarUnaPersona(id);
         findPersona.setImagen_perfil(nuevoPerfil);
@@ -51,6 +52,7 @@ public class PersonaController {
         findPersona.setUrl_linkedin(nuevoLinkedin);
         findPersona.setNombre(nuevoNombre);
         findPersona.setApellido(nuevoApellido);
+        findPersona.setNum_celular(nuevoNumero);
         
         personaService.crearPersona(findPersona);
         return findPersona;

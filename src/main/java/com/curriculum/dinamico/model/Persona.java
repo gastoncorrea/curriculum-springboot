@@ -33,8 +33,9 @@ public class Persona {
     @OneToOne
     private Usuario idusuario;
     
-    @OneToOne(mappedBy = "persona")
+    /*@OneToOne(mappedBy = "persona")
     private Residencia idresidencia;
+    */
     
     @OneToMany(mappedBy = "persona")
     private List<Educacion> educacion;

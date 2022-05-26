@@ -29,7 +29,7 @@ public class Exp_laboral {
     private String tiempo_trab;
     
     @ManyToOne
-    @JsonIgnore
+    //@JsonIgnore
     private Persona persona;
     
 }

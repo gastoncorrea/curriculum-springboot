@@ -6,6 +6,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -52,6 +53,12 @@ public class ExperienciaController {
         
         expService.crearExperiecia(encontrarUnaExperiencia);
         return encontrarUnaExperiencia;
+    }
+    
+    @DeleteMapping ("/experiencia/borrar/{id}")
+    public String borrarExperiencia(Long id){
+        expService.eliminarUnaExperiencia(id);
+        return "La Experiencia laboral fue eliminada";
     }
     
     
