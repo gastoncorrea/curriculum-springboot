@@ -19,7 +19,6 @@ public class Aptitud {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String nombre;
-    private String descripcion;
     private int nivel;
     
     @ManyToOne

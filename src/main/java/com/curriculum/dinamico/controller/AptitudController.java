@@ -34,13 +34,11 @@ public class AptitudController {
     @PutMapping("/aptitud/modificar/{id}")
     public Aptitud modificarApitud(@PathVariable Long id,
                                     @RequestParam ("nombre") String nuevoNombre,
-                                    @RequestParam ("descripcion") String nuevaDescripcion,
                                     @RequestParam ("url") int nuevoNivel){
         
         Aptitud findAptitud = aptitudS.findAptitud(id);
         
         findAptitud.setNombre(nuevoNombre);
-        findAptitud.setDescripcion(nuevaDescripcion);
         findAptitud.setNivel(nuevoNivel);
         
         aptitudS.saveAptitud(findAptitud);
