@@ -19,15 +19,19 @@ import com.curriculum.dinamico.service.UsuarioService;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/login/persona")
+@CrossOrigin(origins = "https://localhost:4200")
 public class CurriculumController {
     
     @Autowired
@@ -45,7 +49,7 @@ public class CurriculumController {
     @Autowired
     private IProyectoService proyectoS;
     
-    @PostMapping("/login/persona/")
+    @PostMapping("/")
     @ResponseBody
     public PersonaDto encontrarPersona(@RequestBody Usuario usuario){
         Long idEncontrada = null;
