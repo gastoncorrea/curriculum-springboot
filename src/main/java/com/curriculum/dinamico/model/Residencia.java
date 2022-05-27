@@ -27,7 +27,7 @@ public class Residencia {
     private String nacionalidad;
     
     @OneToOne
-    //@JsonIgnore
+    @JsonIgnore
     private Persona persona;
     
 }

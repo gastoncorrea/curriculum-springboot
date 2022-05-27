@@ -1,6 +1,7 @@
 
 package com.curriculum.dinamico.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,5 +23,6 @@ public class Aptitud {
     private int nivel;
     
     @ManyToOne
+    @JsonIgnore
     private Persona persona;
 }

@@ -24,6 +24,6 @@ public class Proyecto {
     private String url;
     
     @ManyToOne
-    //@JsonIgnore
+    @JsonIgnore
     private Persona persona;
 }
