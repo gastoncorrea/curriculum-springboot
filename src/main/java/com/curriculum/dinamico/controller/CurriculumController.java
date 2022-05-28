@@ -16,6 +16,7 @@ import com.curriculum.dinamico.service.IPersonaService;
 import com.curriculum.dinamico.service.IProyectoService;
 import com.curriculum.dinamico.service.IResidenciaService;
 import com.curriculum.dinamico.service.UsuarioService;
+import com.curriculum.dinamico.util.JwtUtil;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,10 +30,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
-@RequestMapping("/login/persona")
-@CrossOrigin(origins = "https://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 public class CurriculumController {
+    
+    
     
     @Autowired
     private UsuarioService usuarioS;
@@ -49,9 +52,9 @@ public class CurriculumController {
     @Autowired
     private IProyectoService proyectoS;
     
-    @PostMapping("/")
+    @GetMapping("/curriculum/persona/{email}")
     @ResponseBody
-    public PersonaDto encontrarPersona(@RequestBody Usuario usuario){
+    public PersonaDto encontrarPersona(@PathVariable String email){
         Long idEncontrada = null;
         List<Usuario> listaUsuario = usuarioS.consultarUsuarios();
         List<Persona> listaPersona = personaS.traerTodasLasPersonas();
@@ -69,12 +72,7 @@ public class CurriculumController {
         List<Aptitud> construirListaAptitud = new ArrayList();
         List<Proyecto> construirListaProyecto = new ArrayList();
         
-        for(Usuario us : listaUsuario){
-            if(usuario.getEmail().equals(us.getEmail()) && usuario.getPassword().equals(us.getPassword())){
-               idEncontrada = us.getIdusuario();
-                //return "guardar variable local";
-            }            
-        }
+        idEncontrada = usuarioS.obtenerIdConEmail(email);
         
         for(Persona pers : listaPersona){
             if(pers.getIdusuario().getIdusuario().equals(idEncontrada)){
@@ -125,7 +123,8 @@ public class CurriculumController {
         persDto.setExperiencia(construirListaExpLaboral);
         persDto.setAptitud(construirListaAptitud);
         persDto.setProyecto(construirListaProyecto);
-        return persDto;
         
+        return persDto;
+       
     }
 }

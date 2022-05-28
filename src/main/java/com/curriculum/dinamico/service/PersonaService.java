@@ -1,6 +1,7 @@
 
 package com.curriculum.dinamico.service;
 
+import com.curriculum.dinamico.dto.PersonaDto;
 import com.curriculum.dinamico.model.Persona;
 import com.curriculum.dinamico.repository.PersonaRepository;
 import java.util.List;
@@ -34,4 +35,5 @@ public class PersonaService implements IPersonaService{
     public void borrarUnaPersona(Long id) {
         personaRepository.deleteById(id);
     }
+
 }

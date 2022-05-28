@@ -14,4 +14,8 @@ public interface UsuarioService {
     public List<Usuario> consultarUsuarios();
     
     public void eliminarUnUsuario(Long id);
+    
+    public Usuario obternerUsuarioPorCredenciales(Usuario usuario);
+    
+    public Long obtenerIdConEmail(String email);
 }

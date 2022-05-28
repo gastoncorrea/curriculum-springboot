@@ -1,0 +1,38 @@
+
+package com.curriculum.dinamico.controller;
+
+import com.curriculum.dinamico.model.Usuario;
+import com.curriculum.dinamico.service.UsuarioService;
+import com.curriculum.dinamico.util.JwtUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@CrossOrigin(origins = "http://localhost:4200")
+public class AutenticacionController {
+    
+    @Autowired 
+    private JwtUtil jwtUtil;
+    
+    @Autowired
+    private UsuarioService usuarioS;
+    
+    @PostMapping("/autenticacion/persona")
+    @ResponseBody
+    public String encontrarPersona(@RequestBody Usuario usuario){
+        
+        Usuario encontrarUsuario = usuarioS.obternerUsuarioPorCredenciales(usuario);
+       
+       if(encontrarUsuario != null){
+           String token = jwtUtil.create(String.valueOf(encontrarUsuario.getIdusuario()), encontrarUsuario.getEmail());
+           return token;
+       }else{
+       return "FAIL";
+       }
+    }
+    
+}

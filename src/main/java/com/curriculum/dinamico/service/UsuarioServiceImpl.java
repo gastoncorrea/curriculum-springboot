@@ -35,5 +35,35 @@ public class UsuarioServiceImpl implements UsuarioService {
     public void eliminarUnUsuario(Long id) {
         uRepository.deleteById(id);
     }
+
+    @Override
+    public Usuario obternerUsuarioPorCredenciales(Usuario usuario) {
+        
+       List <Usuario> listaUsuario = uRepository.findAll();
+       Usuario encontrarUsuario = null;
+       
+       for(Usuario us : listaUsuario){
+            if(usuario.getEmail().equals(us.getEmail()) && usuario.getPassword().equals(us.getPassword())){
+               encontrarUsuario = us;
+            }else{
+                return null;
+            }            
+        }
+        return encontrarUsuario;
+    }
+
+    @Override
+    public Long obtenerIdConEmail(String email) {
+        List<Usuario> listaUsuario = uRepository.findAll();
+        Long idUsuario = null;
+        
+        for(Usuario us : listaUsuario){
+            if(us.getEmail().equals(email)){
+                idUsuario = us.getIdusuario();
+                
+            }
+        }
+        return idUsuario;
+    }
     
 }
