@@ -35,8 +35,6 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "http://localhost:4200")
 public class CurriculumController {
     
-    
-    
     @Autowired
     private UsuarioService usuarioS;
     @Autowired
@@ -55,8 +53,6 @@ public class CurriculumController {
     @GetMapping("/curriculum/persona/{email}")
     @ResponseBody
     public PersonaDto encontrarPersona(@PathVariable String email){
-        Long idEncontrada = null;
-        List<Usuario> listaUsuario = usuarioS.consultarUsuarios();
         List<Persona> listaPersona = personaS.traerTodasLasPersonas();
         List<Residencia> listaResidencia = residenciaS.getResidencia();
         List<Educacion> listaEducacion = educacionS.obtenerEducacion();
@@ -65,14 +61,13 @@ public class CurriculumController {
         List<Proyecto> listaProyecto = proyectoS.getTodosLosProyectos();
         
         Long personaEncontrada = null;
-        Persona construirPersona = null;
         Residencia construirResidencia = null;
         List<Educacion> construirListaEducacion = new ArrayList();
         List<Exp_laboral> construirListaExpLaboral = new ArrayList();
         List<Aptitud> construirListaAptitud = new ArrayList();
         List<Proyecto> construirListaProyecto = new ArrayList();
         
-        idEncontrada = usuarioS.obtenerIdConEmail(email);
+       Long idEncontrada = usuarioS.obtenerIdConEmail(email);
         
         for(Persona pers : listaPersona){
             if(pers.getIdusuario().getIdusuario().equals(idEncontrada)){
@@ -110,7 +105,7 @@ public class CurriculumController {
         }
         
         PersonaDto persDto = new PersonaDto();
-        construirPersona = personaS.encontrarUnaPersona(personaEncontrada);
+        Persona construirPersona = personaS.encontrarUnaPersona(personaEncontrada);
         persDto.setIdPersona(construirPersona.getIdpersona());
         persDto.setNombrePersona(construirPersona.getNombre());
         persDto.setApellidoPersona(construirPersona.getApellido());
