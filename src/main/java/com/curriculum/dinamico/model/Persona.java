@@ -27,7 +27,7 @@ public class Persona {
     private String url_linkedin;
     private String nombre;
     private String apellido;
-    private int num_celular;
+    private String num_celular;
     
     //relaciones entre tablas
     @OneToOne
@@ -38,15 +38,19 @@ public class Persona {
     */
     
     @OneToMany(mappedBy = "persona")
+    @JsonIgnore
     private List<Educacion> educacion;
     
     @OneToMany (mappedBy = "persona")
+    @JsonIgnore
     private List<Proyecto> proyecto;
     
-    @OneToMany (mappedBy = "persona")
+    @OneToMany (mappedBy = "persona")   
+    @JsonIgnore
     private List<Exp_laboral> experiencia_laboral;
     
     @OneToMany (mappedBy = "persona")
+    @JsonIgnore
     private List<Aptitud> aptitud;   
     
 }

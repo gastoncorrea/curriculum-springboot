@@ -17,7 +17,7 @@ public class PersonaDto implements Serializable  {
     private Long idPersona;
     private String nombrePersona;
     private String apellidoPersona;
-    private int num_celular;
+    private String num_celular;
     private String imagen_perfil;
     private String descripcion_mi;
     private String url_linkedin;

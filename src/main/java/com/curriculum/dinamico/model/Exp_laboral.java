@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,12 +26,14 @@ public class Exp_laboral {
     private String nombre;
     private String puesto;
     private String logo;
+    @Temporal(TemporalType.DATE)
     private Date fecha_inicio;
+    @Temporal(TemporalType.DATE)
     private Date fecha_fin;
     private String tiempo_trab;
     
     @ManyToOne
-    @JsonIgnore
+    //@JsonIgnore
     private Persona persona;
     
 }

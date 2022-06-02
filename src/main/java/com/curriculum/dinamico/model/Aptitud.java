@@ -23,6 +23,6 @@ public class Aptitud {
     private int nivel;
     
     @ManyToOne
-    @JsonIgnore
+    //@JsonIgnore
     private Persona persona;
 }
