@@ -26,7 +26,7 @@ public class EducacionService implements IEducacionService{
 
     @Override
     public Educacion obtenerUnaEducacion(Long id) {
-        Educacion unaEducacion = educacionR.getById(id);
+        Educacion unaEducacion = educacionR.findById(id).orElse(null);
         return unaEducacion;
     }
 
