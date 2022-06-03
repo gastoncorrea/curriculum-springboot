@@ -13,7 +13,8 @@ import lombok.Setter;
 
 @Getter @Setter
 public class PersonaDto implements Serializable  {
-    
+    //id del usuario, me sirve para cargar los datos en todos los componentes
+    private Long idUsuario;
     private Long idPersona;
     private String nombrePersona;
     private String apellidoPersona;
