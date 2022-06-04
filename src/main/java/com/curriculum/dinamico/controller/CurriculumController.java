@@ -68,7 +68,7 @@ public class CurriculumController {
         List<Proyecto> construirListaProyecto = new ArrayList();
         //Variable que contiene el "id" de la persona buscada por email
        Long idEncontrada = usuarioS.obtenerIdConEmail(email);
-        Usuario idUsuario = usuarioS.encontrarUnUsuario(idEncontrada);
+        Usuario usuario = usuarioS.encontrarUnUsuario(idEncontrada);
         for(Persona pers : listaPersona){
             if(pers.getIdusuario().getIdusuario().equals(idEncontrada)){
                 personaEncontrada = pers.getIdpersona();
@@ -106,7 +106,7 @@ public class CurriculumController {
         
         PersonaDto persDto = new PersonaDto();
         Persona construirPersona = personaS.encontrarUnaPersona(personaEncontrada);
-        persDto.setIdUsuario(idUsuario.getIdusuario());
+        persDto.setUsuario(usuario);
         persDto.setIdPersona(construirPersona.getIdpersona());
         persDto.setNombrePersona(construirPersona.getNombre());
         persDto.setApellidoPersona(construirPersona.getApellido());
