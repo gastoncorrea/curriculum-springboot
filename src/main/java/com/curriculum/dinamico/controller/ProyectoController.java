@@ -54,7 +54,7 @@ public class ProyectoController {
     @DeleteMapping("/proyecto/eliminar/{id}")
     public String borrarUnProyecto(@PathVariable Long id){
         proyectoS.deleteOneProyecto(id);
-        return "El proyecto fue eliminado de manera exitora";
+        return "El proyecto fue eliminado de manera exitosa";
     }
     
 }

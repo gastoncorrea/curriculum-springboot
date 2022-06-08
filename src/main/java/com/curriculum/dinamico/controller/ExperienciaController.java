@@ -38,6 +38,7 @@ public class ExperienciaController {
     public Exp_laboral modificarUnaExperiencia(@PathVariable Long id,
             @RequestParam("nombre") String nuevoNombre,
             @RequestParam("puesto") String nuevoPuesto,
+            @RequestParam("descripcion") String nuevaDescripcion,
             @RequestParam("logo") String nuevoLogo,
             @RequestParam("fecha_inicio") Date nuevaFechaInicio,
             @RequestParam("fecha_fin") Date nuevaFechaFin,
@@ -47,6 +48,7 @@ public class ExperienciaController {
 
         encontrarUnaExperiencia.setNombre(nuevoNombre);
         encontrarUnaExperiencia.setPuesto(nuevoPuesto);
+        encontrarUnaExperiencia.setDescripcion(nuevaDescripcion);
         encontrarUnaExperiencia.setLogo(nuevoLogo);
         encontrarUnaExperiencia.setFecha_inicio(nuevaFechaInicio);
         encontrarUnaExperiencia.setFecha_fin(nuevaFechaFin);

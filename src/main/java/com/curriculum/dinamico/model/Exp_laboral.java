@@ -25,6 +25,7 @@ public class Exp_laboral {
     private Long idexp_laboral;
     private String nombre;
     private String puesto;
+    private String descripcion;
     private String logo;
     @Temporal(TemporalType.DATE)
     private Date fecha_inicio;
