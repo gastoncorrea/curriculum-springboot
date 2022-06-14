@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "/*")
+@CrossOrigin(origins = "*")
 public class AutenticacionController {
     
     @Autowired 
