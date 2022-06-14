@@ -39,7 +39,7 @@ public class ExperienciaController {
             @RequestParam("nombre") String nuevoNombre,
             @RequestParam("puesto") String nuevoPuesto,
             @RequestParam("descripcion") String nuevaDescripcion,
-            @RequestParam("logo") String nuevoLogo,
+            @RequestParam(value="logo", required=false) String nuevoLogo,
             @RequestParam("fecha_inicio") Date nuevaFechaInicio,
             @RequestParam("fecha_fin") Date nuevaFechaFin,
             @RequestParam("tiempo_trab") String nuevoTiempo) {
